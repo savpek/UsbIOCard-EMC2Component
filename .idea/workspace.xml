@@ -49,10 +49,8 @@
           <file leaf-file-name="test_usb_io_card_connection.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test_usb_io_card_connection.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="27" column="39" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.6996951">
-                  <folding>
-                    <element signature="e#0#29#0" expanded="true" />
-                  </folding>
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -61,58 +59,13 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="usb_io_card_connection.py" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="usb_io_card_connection.py" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/usb_io_card_connection.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="36" column="0" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.0">
+                <state line="27" column="12" selection-start="834" selection-end="834" vertical-scroll-proportion="0.4631685">
                   <folding>
                     <element signature="e#0#14#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="flexmock.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://C:/Python27/Lib/site-packages/flexmock.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="922" column="0" selection-start="31838" selection-end="31838" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="case.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://C:/Python27/Lib/unittest/case.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="390" column="0" selection-start="13378" selection-end="13378" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="suite.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://C:/Python27/Lib/unittest/suite.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="69" column="0" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tcunittest.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/tcunittest.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="174" column="0" selection-start="5915" selection-end="5915" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="utrunner.py" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="131" column="22" selection-start="4048" selection-end="4048" vertical-scroll-proportion="0.9664634">
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -132,6 +85,7 @@
         <option value="$PROJECT_DIR$/xyz_controls.py" />
         <option value="$PROJECT_DIR$/usb_io_card_connection.tests.py" />
         <option value="$PROJECT_DIR$/usb_io_card_connection.py" />
+        <option value="$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py" />
         <option value="$PROJECT_DIR$/test_usb_io_card_connection.py" />
       </list>
     </option>
@@ -366,7 +320,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -376,7 +330,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297244" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -445,10 +399,6 @@
           <url>file://$PROJECT_DIR$/usb_io_card_connection.py</url>
           <line>21</line>
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/test_usb_io_card_connection.py</url>
-          <line>22</line>
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -458,9 +408,37 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="29" selection-start="2849" selection-end="2849" vertical-scroll-proportion="0.10797174">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/tcunittest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="0" selection-start="5598" selection-end="5598" vertical-scroll-proportion="0.691221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/unittest/suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.19677094">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="390" column="0" selection-start="13378" selection-end="13378" vertical-scroll-proportion="0.19427402">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/flexmock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="922" column="0" selection-start="31838" selection-end="31838" vertical-scroll-proportion="0.0">
+        <state line="922" column="0" selection-start="31838" selection-end="31838" vertical-scroll-proportion="0.40262362">
           <folding />
         </state>
       </provider>
@@ -472,40 +450,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="390" column="0" selection-start="13378" selection-end="13378" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/unittest/suite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="1868" selection-end="1868" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/tcunittest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="0" selection-start="5915" selection-end="5915" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="22" selection-start="4048" selection-end="4048" vertical-scroll-proportion="0.9664634">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_usb_io_card_connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="39" selection-start="1078" selection-end="1078" vertical-scroll-proportion="0.6996951">
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
