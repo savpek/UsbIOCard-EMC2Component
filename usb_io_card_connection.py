@@ -31,4 +31,8 @@ class UsbCard:
         self.serial_con.write("Test message")
     def send(self, message):
         self.serial_con.write("Test message")
-        return self.serial_con.readLine()
+        result = self.serial_con.readLine()
+        if "ERROR:" in result:
+            raise Exception("IO card returned error: " + result)
+        return result
+

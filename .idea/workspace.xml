@@ -40,16 +40,16 @@
           <file leaf-file-name="usb_io_card_connection.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/usb_io_card_connection.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="32" selection-start="954" selection-end="954" vertical-scroll-proportion="0.0">
+                <state line="35" column="20" selection-start="1017" selection-end="1017" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="test_usb_io_card_connection.py" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="test_usb_io_card_connection.py" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test_usb_io_card_connection.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="40" selection-start="962" selection-end="962" vertical-scroll-proportion="0.42236024">
+                <state line="29" column="67" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.51035196">
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
                   </folding>
@@ -70,10 +70,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="usb_io_card_connection.py" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="usb_io_card_connection.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/usb_io_card_connection.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="33" column="41" selection-start="963" selection-end="963" vertical-scroll-proportion="0.5660949">
+                <state line="24" column="28" selection-start="602" selection-end="602" vertical-scroll-proportion="0.41170534">
                   <folding>
                     <element signature="e#0#14#0" expanded="true" />
                   </folding>
@@ -457,18 +457,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usb_io_card_connection.py">
+    <entry file="file://$PROJECT_DIR$/test_usb_io_card_connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="32" selection-start="954" selection-end="954" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="29" column="67" selection-start="1257" selection-end="1257" vertical-scroll-proportion="0.51035196">
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_usb_io_card_connection.py">
+    <entry file="file://$PROJECT_DIR$/usb_io_card_connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="40" selection-start="962" selection-end="962" vertical-scroll-proportion="0.42236024">
+        <state line="24" column="28" selection-start="602" selection-end="602" vertical-scroll-proportion="0.41170534">
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
