@@ -52,3 +52,8 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         command = IOCardCmd(CmdType.SET_PIN, "2.T0", CmdState.LOW)
         command = self.usb_card.send_command(command)
         self.assertEquals(command.return_value, None)
+
+    def test_send_command_adc_command_correctly_formatted(self):
+        command = IOCardCmd(CmdType.READ_ADC, "2.T0")
+        self.usb_card.send_command(command)
+        self.handle_mock.write.assert_called_with("ADC 2.T0")

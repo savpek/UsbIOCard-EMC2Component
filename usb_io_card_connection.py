@@ -33,13 +33,14 @@ class UsbCard:
     def __init__(self, serialInterface, port, speed):
         self.serial_con = serialInterface.Serial(port, speed)
 
-    def _check_for_error(self, feedback_line):
-        if "ERROR:" in feedback_line:
-            logging.error("Error occurred while running command, error string: {0}"
-                .format(feedback_line))
-            pass
+    def read_terminal(self, terminal_name):
+        pass
 
-        self.serial_con.write("Test message")
+    def set_terminal(self, terminal_name):
+        pass
+
+    def adc_of_terminal(self, terminal_name):
+        pass
 
     def send_command(self, command):
         command_str = "{0} {1} {2}".format(command.type, command.terminal, command.state)
