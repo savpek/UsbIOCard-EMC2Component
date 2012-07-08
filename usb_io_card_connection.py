@@ -20,13 +20,15 @@ class IOCardCmd:
         self.state = state
     return_value = None
 
-class IoCardReturnError(Exception):
+class IoCardException(Exception):
     def _init__(self, value):
         self.value = value
     def __str__(self):
         return repr(self.value)
 
 class UsbCard:
+    ERROR_KEYWORD = "ERROR:"
+
     def __init__(self, port, speed):
         self.serial_con = serial.Serial(port, speed)
 
@@ -34,7 +36,15 @@ class UsbCard:
         self.serial_con = serialInterface.Serial(port, speed)
 
     def read_terminal(self, terminal_name):
-        pass
+        self.serial_con.write("READ " + terminal_name)
+        result = self.serial_con.readline()
+
+        if self.ERROR_KEYWORD in result:
+            raise IoCardException("IO card returned error, error message: " + result)
+
+        if result != "HIGH" and result != "LOW":
+            raise ValueError("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: " + result)
+        return result
 
     def set_terminal(self, terminal_name):
         pass
