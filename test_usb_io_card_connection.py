@@ -15,11 +15,15 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self.handle_mock = MagicMock()
         self.serial_mock = MagicMock
         self.serial_mock.Serial = MagicMock(return_value=self.handle_mock)
-        
+        self.usb_card = UsbCard(self.serial_mock, "COM1", 9600)
+
     def test_send_sends_message(self):
         self.handle_mock.write = MagicMock()
-        usb_card = UsbCard(self.serial_mock, "COM1", 9600)
-        usb_card.send("Test message")
+        self.usb_card.send("Test message")
         self.handle_mock.write.assert_called_with("Test message")
+a
+    def test_send_command_returns_result(self):
+        self.handle_mock.readLine = MagicMock(return_value = "RETURN STRING FROM IO CARD")
+        self.assertEqual(self.usb_card.send("ABC"), "RETURN STRING FROM IO CARD")
 
 

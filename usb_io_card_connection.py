@@ -31,3 +31,4 @@ class UsbCard:
         self.serial_con.write("Test message")
     def send(self, message):
         self.serial_con.write("Test message")
+        return self.serial_con.readLine()
