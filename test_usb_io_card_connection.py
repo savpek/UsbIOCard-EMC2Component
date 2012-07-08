@@ -1,6 +1,6 @@
 import unittest
 from mock import MagicMock
-from usb_io_card_connection import UsbCard
+from usb_io_card_connection import UsbCard, IoCardReturnError
 
 class UsbIoCardConnection_InitTests(unittest.TestCase):
     def setUp(self):
@@ -28,5 +28,8 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
 
     def test_send_returns_error_keyword(self):
         self.handle_mock.readLine = MagicMock(return_value = "ERROR: INVALID SYNTAX")
-        with self.assertRaises(Exception):
+        with self.assertRaises(IoCardReturnError):
             self.usb_card.send("abc")
+
+    def test_send_flush_old_messages_before_return_result(self):
+        pass

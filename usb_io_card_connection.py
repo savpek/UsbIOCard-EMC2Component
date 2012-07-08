@@ -3,13 +3,25 @@ import serial
 
 logging.basicConfig(filename='app.log', level=logging.INFO)
 
-class Pin:
-    HIGH = 1
-    LOW = 0
+class CommandType:
+    READ_PIN = 0
+    SET_PIN = 1
+    READ_ADC = 2
+
+class Command:
+    type = CommandType.READ_PIN
+    pin_name = ""
+    return_value = 0
+
+class IoCardReturnError(Exception):
+    def _init__(self, value):
+        self.value = value
+    def __str__(self):
+        return repr(self.value)
 
 class UsbCard:
     def __init__(self, port, speed):
-        pass
+        self.serial_con = serial.Serial(port, speed)
 
     def __init__(self, serialInterface, port, speed):
         self.serial_con = serialInterface.Serial(port, speed)
@@ -33,6 +45,6 @@ class UsbCard:
         self.serial_con.write("Test message")
         result = self.serial_con.readLine()
         if "ERROR:" in result:
-            raise Exception("IO card returned error: " + result)
+            raise IoCardReturnError("IO card returned error: " + result)
         return result
 
