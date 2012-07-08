@@ -3,15 +3,21 @@ import serial
 
 logging.basicConfig(filename='app.log', level=logging.INFO)
 
-class CommandType:
-    READ_PIN = 0
-    SET_PIN = 1
-    READ_ADC = 2
+class CmdState:
+    HIGH = "HIGH"
+    LOW = "LOW"
+    NA = ""
 
-class Command:
-    def __init__(self, command_type, terminal_name):
+class CmdType:
+    READ_PIN = "READ"
+    SET_PIN = "SET"
+    READ_ADC = "ADC"
+
+class IOCardCmd:
+    def __init__(self, command_type, terminal_name, state=CmdState.NA):
         self.type = command_type
-        self.terminal_name = terminal_name
+        self.terminal = terminal_name
+        self.state = state
     return_value = None
 
 class IoCardReturnError(Exception):
@@ -34,10 +40,9 @@ class UsbCard:
             pass
 
         self.serial_con.write("Test message")
-    def send(self, message):
-        self.serial_con.write("Test message")
-        result = self.serial_con.readLine()
-        if "ERROR:" in result:
-            raise IoCardReturnError("IO card returned error: " + result)
-        return result
+    def send_command(self, command):
+        command_str = "{0} {1} {2}".format(command.type, command.terminal, command.state)
+        command_str = command_str.strip()
+        self.serial_con.write(command_str)
+
 
