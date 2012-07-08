@@ -5,10 +5,11 @@ from usb_io_card_connection import UsbCard, IOCardCmd, CmdType, CmdState, IoCard
 class UsbIoCardConnection_InitTests(unittest.TestCase):
     def setUp(self):
         self.serial_mock = MagicMock()
+
     def test_connection_is_opened_with_correct_arguments(self):
-        self.serial_mock.Serial = MagicMock()
         usb_card = UsbCard(self.serial_mock, "COM1", 9600)
-        self.serial_mock.Serial.assert_called_with("COM1", 9600)
+        # Timeout must be set to 1! Otherwise readline will hang forever!
+        self.serial_mock.Serial.assert_called_with("COM1", 9600, timeout=1)
 
 class UsbIoCardConnection_Tests(unittest.TestCase):
     def setUp(self):
@@ -40,11 +41,27 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self.handle_mock.readline = MagicMock(return_value = "ERROR: Invalid terminal name")
         with self.assertRaises(IoCardException):
             self.usb_card.read_terminal("2.T0")
+
+    def test_set_terminal_high_send_correctly_formatted_message(self):
+        self.handle_mock.readline = MagicMock(return_value = "")
+        self.handle_mock.inWaiting = MagicMock(return_value = 0)
+        self.usb_card.set_terminal_high("2.T0")
+        self.handle_mock.write.assert_called_with("SET 2.T0 HIGH")
+
+    def set_set_terminal_high_returns_no_value(self):
+        self.handle_mock.readline = MagicMock(return_value = "")
+        self.handle_mock.inWaiting = MagicMock(return_value = 0)
+        result = self.usb_card.set_terminal_high("2.T0")
+        self.assertEquals(result, None)
+
+    def test_set_terminal_high_any_return_from_io_card_counts_as_exception(self):
+        self.handle_mock.readline = MagicMock(return_value = "")
+        self.handle_mock.inWaiting(return_value=10)
+
+        with self.assertRaises(IoCardException):
+            self.usb_card.set_terminal_high("2.T3")
+
 """
-
-
-
-
 
         self.handle_mock.readLine = MagicMock(return_value = "HIGH")
         command = IOCardCmd(CmdType.READ_PIN, "2.T0")
