@@ -50,11 +50,16 @@ class UsbCard:
 
     def set_terminal_high(self, terminal_name):
         self.serial_con.write("SET "  + terminal_name + " HIGH")
+
         if(self.serial_con.inWaiting() != 0):
             raise IoCardException("Error occurred during SET, error: " + self.serial_con.readline())
 
     def set_terminal_low(self, terminal_name):
-        pass
+        self.serial_con.write("SET "  + terminal_name + " LOW")
+
+        if(self.serial_con.inWaiting() != 0):
+            raise IoCardException("Error occurred during SET, error: " + self.serial_con.readline())
+
 
     def adc_of_terminal(self, terminal_name):
         pass
