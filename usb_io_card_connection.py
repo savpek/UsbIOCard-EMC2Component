@@ -20,11 +20,6 @@ class UsbCard:
 
     def _send_command(self, command_string):
         self.serial_con.write("abc")
-        #self._flush_serial()
-        #logging.debug('Sending command "{0}"'.format(command_string))
-        #self.serial_con.write(command_string)
-        #self._check_for_error(self.serialConnection.readline())
-        #return self.serialConnection.readLine()
         pass
 
     def _check_for_error(self, feedback_line):
@@ -32,17 +27,3 @@ class UsbCard:
             logging.error("Error occurred while running command, error string: {0}"
                 .format(feedback_line))
             pass
-
-    def read_terminal_state(self, terminal_identifier):
-        command_result = self._send_command("READ {0}".format(terminal_identifier))
-        #if "LOW" in command_result:
-        #    return Pin.LOW
-        #else:
-        #    return Pin.HIGH
-        pass
-
-    def read_terminal_adc(selfs, terminal_identifier):
-        pass
-
-    def set_terminal(self, terminal_identifier):
-        pass
