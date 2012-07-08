@@ -40,9 +40,12 @@ class UsbCard:
             pass
 
         self.serial_con.write("Test message")
+
     def send_command(self, command):
         command_str = "{0} {1} {2}".format(command.type, command.terminal, command.state)
         command_str = command_str.strip()
         self.serial_con.write(command_str)
-
-
+        command.return_value = self.serial_con.readLine()
+        if "ERROR: " in command.return_value:
+            raise IoCardReturnError("IO card returned error: " + command.return_value)
+        return command

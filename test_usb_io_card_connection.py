@@ -1,6 +1,6 @@
 import unittest
 from mock import MagicMock
-from usb_io_card_connection import UsbCard, IOCardCmd, CmdType
+from usb_io_card_connection import UsbCard, IOCardCmd, CmdType, CmdState, IoCardReturnError
 
 class UsbIoCardConnection_InitTests(unittest.TestCase):
     def setUp(self):
@@ -24,19 +24,18 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self.handle_mock.write.assert_called_with("READ 2.T0")
 
     def test_send_command_returns_correct_value_with_read_message(self):
-        #self.handle_mock.readline()
-        pass
+        self.handle_mock.readLine = MagicMock(return_value = CmdState.LOW)
+        command = IOCardCmd(CmdType.READ_PIN, "2.T0")
+        result = self.usb_card.send_command(command)
+        self.assertEquals(result.return_value, CmdState.LOW)
 
-"""
-    def test_send_command_returns_result(self):
-        self.handle_mock.readLine = MagicMock(return_value = "RETURN STRING FROM IO CARD")
-        self.assertEqual(self.usb_card.send("ABC"), "RETURN STRING FROM IO CARD")
+        self.handle_mock.readLine = MagicMock(return_value = CmdState.HIGH)
+        command = IOCardCmd(CmdType.READ_PIN, "2.T0")
+        result = self.usb_card.send_command(command)
+        self.assertEquals(result.return_value, CmdState.HIGH)
 
-    def test_send_returns_error_keyword(self):
-        self.handle_mock.readLine = MagicMock(return_value = "ERROR: INVALID SYNTAX")
+    def test_send__command_returns_exception_on_error(self):
+        self.handle_mock.readLine = MagicMock(return_value = "ERROR: INVALID TERMINAL")
         with self.assertRaises(IoCardReturnError):
-            self.usb_card.send("abc")
+            self.usb_card.send_command(IOCardCmd(CmdType.READ_PIN, "2.T0"))
 
-    def test_send_flush_old_messages_before_return_result(self):
-        pass
-"""
