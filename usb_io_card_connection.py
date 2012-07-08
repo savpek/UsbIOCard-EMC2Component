@@ -38,6 +38,7 @@ class UsbCard:
 
     def read_terminal(self, terminal_name):
         self.serial_con.write("READ " + terminal_name)
+
         result = self.serial_con.readline()
 
         if self.ERROR_KEYWORD in result:

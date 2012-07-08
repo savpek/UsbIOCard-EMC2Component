@@ -17,6 +17,7 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self.serial_mock = MagicMock
         self.serial_mock.Serial = MagicMock(return_value=self.handle_mock)
         self.usb_card = UsbCard(self.serial_mock, "COM1", 9600)
+        self.handle_mock.inWaiting(return_value = 10)
 
     def test_read_terminal_sends_correctly_formatted_message(self):
         self.handle_mock.readline = MagicMock(return_value = "LOW")
@@ -48,6 +49,12 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self.usb_card.set_terminal_high("2.T0")
         self.handle_mock.write.assert_called_with("SET 2.T0 HIGH")
 
+    def test_set_terminal_high_doesnt_call_readline_if_no_chars_in_read_buffer(self):
+        self.handle_mock.readline = MagicMock(return_value = "")
+        self.handle_mock.inWaiting = MagicMock(return_value = 0)
+        self.usb_card.set_terminal_high("2.T0")
+        self.assertFalse(self.handle_mock.readline.called)
+
     def set_set_terminal_high_returns_no_value(self):
         self.handle_mock.readline = MagicMock(return_value = "")
         self.handle_mock.inWaiting = MagicMock(return_value = 0)
@@ -60,6 +67,8 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
 
         with self.assertRaises(IoCardException):
             self.usb_card.set_terminal_high("2.T3")
+
+
 
 """
 
