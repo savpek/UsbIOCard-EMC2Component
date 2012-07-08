@@ -60,7 +60,6 @@ class UsbCard:
         if(self.serial_con.inWaiting() != 0):
             raise IoCardException("Error occurred during SET, error: " + self.serial_con.readline())
 
-
     def adc_of_terminal(self, terminal_name):
         pass
 
