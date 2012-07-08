@@ -27,3 +27,7 @@ class UsbCard:
             logging.error("Error occurred while running command, error string: {0}"
                 .format(feedback_line))
             pass
+
+        self.serial_con.write("Test message")
+    def send(self, message):
+        self.serial_con.write("Test message")
