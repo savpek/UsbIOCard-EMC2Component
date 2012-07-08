@@ -46,6 +46,13 @@ class UsbCard:
         command_str = command_str.strip()
         self.serial_con.write(command_str)
         command.return_value = self.serial_con.readLine()
+
         if "ERROR: " in command.return_value:
             raise IoCardReturnError("IO card returned error: " + command.return_value)
+
+        if command.return_value == '':
+            command.return_value = None
+
         return command
+
+

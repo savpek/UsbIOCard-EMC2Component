@@ -18,18 +18,17 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self.usb_card = UsbCard(self.serial_mock, "COM1", 9600)
 
     def test_send_correctly_formatted_read_message(self):
-        self.handle_mock.write = MagicMock()
         command = IOCardCmd(CmdType.READ_PIN, "2.T0")
         self.usb_card.send_command(command)
         self.handle_mock.write.assert_called_with("READ 2.T0")
 
     def test_send_command_returns_correct_value_with_read_message(self):
-        self.handle_mock.readLine = MagicMock(return_value = CmdState.LOW)
+        self.handle_mock.readLine = MagicMock(return_value = "LOW")
         command = IOCardCmd(CmdType.READ_PIN, "2.T0")
         result = self.usb_card.send_command(command)
         self.assertEquals(result.return_value, CmdState.LOW)
 
-        self.handle_mock.readLine = MagicMock(return_value = CmdState.HIGH)
+        self.handle_mock.readLine = MagicMock(return_value = "HIGH")
         command = IOCardCmd(CmdType.READ_PIN, "2.T0")
         result = self.usb_card.send_command(command)
         self.assertEquals(result.return_value, CmdState.HIGH)
@@ -39,3 +38,17 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         with self.assertRaises(IoCardReturnError):
             self.usb_card.send_command(IOCardCmd(CmdType.READ_PIN, "2.T0"))
 
+    def test_send_command_correctly_formatted_set_message(self):
+        command = IOCardCmd(CmdType.SET_PIN, "2.T0", CmdState.LOW)
+        self.usb_card.send_command(command)
+        self.handle_mock.write.assert_called_with("SET 2.T0 LOW")
+
+        command = IOCardCmd(CmdType.SET_PIN, "2.T0", CmdState.HIGH)
+        self.usb_card.send_command(command)
+        self.handle_mock.write.assert_called_with("SET 2.T0 HIGH")
+
+    def test_send_command_returns_none_as_return_value(self):
+        self.handle_mock.readLine = MagicMock(return_value="")
+        command = IOCardCmd(CmdType.SET_PIN, "2.T0", CmdState.LOW)
+        command = self.usb_card.send_command(command)
+        self.assertEquals(command.return_value, None)
