@@ -9,9 +9,10 @@ class CommandType:
     READ_ADC = 2
 
 class Command:
-    type = CommandType.READ_PIN
-    pin_name = ""
-    return_value = 0
+    def __init__(self, command_type, terminal_name):
+        self.type = command_type
+        self.terminal_name = terminal_name
+    return_value = None
 
 class IoCardReturnError(Exception):
     def _init__(self, value):
@@ -25,14 +26,6 @@ class UsbCard:
 
     def __init__(self, serialInterface, port, speed):
         self.serial_con = serialInterface.Serial(port, speed)
-
-    def _flush_serial(self):
-        flushed_data = self.serial_con.readLine()
-        logging.debug('Flushed serial data, data in buffer: {0}'.format(flushed_data))
-
-    def _send_command(self, command_string):
-        self.serial_con.write("abc")
-        pass
 
     def _check_for_error(self, feedback_line):
         if "ERROR:" in feedback_line:
