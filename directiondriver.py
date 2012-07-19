@@ -10,8 +10,12 @@ class DirController:
         self.connection = usb_connection
 
     def update(self):
-        self.connection.read_terminal(self.x_plus_name)
-        self.connection.read_terminal(self.x_minus_name)
-        self.connection.read_terminal(self.y_plus_name)
-        self.connection.read_terminal(self.y_minus_name)
+        if self.x_plus_name is not None:
+            self.connection.read_terminal(self.x_plus_name)
+        if self.x_minus_name is not None:
+            self.connection.read_terminal(self.x_minus_name)
+        if self.y_plus_name is not None:
+            self.connection.read_terminal(self.y_plus_name)
+        if self.y_minus_name is not None:
+            self.connection.read_terminal(self.y_minus_name)
 

@@ -19,7 +19,10 @@ class UsbIoCardConnection_InitTests(unittest.TestCase):
         self.assertEquals(self.connection_mock.read_terminal.call_args_list, expected)
 
     def test_update_ignores_not_defined_terminals(self):
+        self.dir_ctrl.y_plus_name = None
+        self.dir_ctrl.y_minus_name = None
         self.dir_ctrl.update()
-        expected = [call("2.T0"), call("2.T1"), call("2.T2"), call("2.T3")]
+
+        expected = [call("2.T0"), call("2.T1")]
         self.assertEquals(self.connection_mock.read_terminal.call_args_list, expected)
 
