@@ -1,20 +1,17 @@
 import iocard
 
-class Direction:
-    # Controller one direction.
-    plus_name = ""
-    plus_value = ""
-    minus_name = ""
-    minus_value = ""
-
 class DirController:
-    directions
-    connection
+    y_plus_name = None
+    y_minus_name = None
+    x_plus_name = None
+    x_minus_name = None
 
-    def __init__(self, terminal_name, usb_connection):
+    def __init__(self, usb_connection):
         self.connection = usb_connection
-        self.terminal_name = terminal_name
 
-    def abc(self):
-        pass
+    def update(self):
+        self.connection.read_terminal(self.x_plus_name)
+        self.connection.read_terminal(self.x_minus_name)
+        self.connection.read_terminal(self.y_plus_name)
+        self.connection.read_terminal(self.y_minus_name)
 
