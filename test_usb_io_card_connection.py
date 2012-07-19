@@ -1,6 +1,6 @@
 import unittest
 from mock import MagicMock
-from usb_io_card_connection import UsbCard, IOCardCmd, CmdType, CmdState, IoCardException
+from usb_io_card_connection import UsbCard, IoCardException
 
 class UsbIoCardConnection_InitTests(unittest.TestCase):
     def setUp(self):
@@ -79,7 +79,6 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self.handle_mock.inWaiting = MagicMock(return_value = 0)
         result = self.usb_card.set_terminal_high("2.T0")
         self.assertEquals(result, None)
-
 
     def test_set_terminal_high_any_return_from_io_card_counts_as_exception(self):
         self.handle_mock.readline = MagicMock(return_value = "")
