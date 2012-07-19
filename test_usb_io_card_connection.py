@@ -93,3 +93,34 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self.handle_mock.inWaiting = MagicMock(return_value = 0)
         self.usb_card.set_terminal_low("2.T0")
         self.assertFalse(self.handle_mock.readline.called)
+
+    def test_set_terminal_low_send_correctly_formatted_message(self):
+        self.handle_mock.readline = MagicMock(return_value = "")
+        self.handle_mock.inWaiting = MagicMock(return_value = 0)
+        self.usb_card.set_terminal_low("2.T0")
+        self.handle_mock.write.assert_called_with("SET 2.T0 LOW")
+
+    def test_adc_from_terminal_send_correctly_formatted_message(self):
+        self.usb_card.adc_of_terminal("2.T0")
+        self.handle_mock.write.assert_called_with("ADC 2.T0")
+
+    def test_adc_from_terminal_returns_number_from_correct_result(self):
+        self.handle_mock.readline = MagicMock(return_value="0")
+        self.assertEqual(self.usb_card.adc_of_terminal("2.T1"), 0)
+
+        self.handle_mock.readline = MagicMock(return_value="100")
+        self.assertEqual(self.usb_card.adc_of_terminal("2.T1"), 100)
+
+        self.handle_mock.readline = MagicMock(return_value="256")
+        self.assertEqual(self.usb_card.adc_of_terminal("2.T1"), 256)
+
+    def test_adc_from_terminal_raise_error_if_not_number_returned(self):
+        self.handle_mock.readline = MagicMock(return_value="3bx")
+
+        with self.assertRaises(IoCardException):
+            self.usb_card.adc_of_terminal("2.T2")
+
+        self.handle_mock.readline = MagicMock(return_value="ERROR: ....")
+
+        with self.assertRaises(IoCardException):
+            self.usb_card.adc_of_terminal("2.T2")

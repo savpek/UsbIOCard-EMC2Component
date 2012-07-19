@@ -61,7 +61,13 @@ class UsbCard:
             raise IoCardException("Error occurred during SET, error: " + self.serial_con.readline())
 
     def adc_of_terminal(self, terminal_name):
-        pass
+        self.serial_con.write("ADC " + terminal_name)
+
+        received_line = self.serial_con.readline()
+        try:
+            return float(received_line)
+        except (ValueError):
+            raise IoCardException("Invalid value returned from IO card, value returned: " + received_line)
 
     def send_command(self, command):
         command_str = "{0} {1} {2}".format(command.type, command.terminal, command.state)
