@@ -1,12 +1,12 @@
 import unittest
 from mock import MagicMock, call
-import directiondriver
+import joystic
 import iocard
 
 class UsbIoCardConnection_InitTests(unittest.TestCase):
     def setUp(self):
         self.con_mock = MagicMock(spec=iocard.UsbCard)
-        self.dir_ctrl = directiondriver.DirController(self.con_mock)
+        self.dir_ctrl = joystic.DirController(self.con_mock)
 
         self.dir_ctrl.x_plus_name = "2.T0"
         self.dir_ctrl.x_minus_name = "2.T1"
