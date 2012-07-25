@@ -16,8 +16,12 @@ class UsbCard:
     def __init__(self, port, speed):
         self.serial_con = serial.Serial(port, speed, timeout=self.TIMEOUT)
 
-    def __init__(self, serialInterface, port, speed):
-        self.serial_con = serialInterface.Serial(port, speed, timeout=self.TIMEOUT)
+    def __init__(self, port, speed, serialInterface=None):
+        if serialInterface != None:
+            self.serial_con = serialInterface.Serial(port, speed, timeout=self.TIMEOUT)
+        else:
+            self.serial_con = serial.Serial(port, speed, timeout=self.TIMEOUT)
+
 
     def read_terminal(self, terminal_name):
         self.serial_con.write("READ " + terminal_name)
@@ -28,7 +32,7 @@ class UsbCard:
             raise IoCardException("IO card returned error, error message: " + result)
 
         if result != "HIGH" and result != "LOW":
-            raise ValueError("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: " + result)
+            raise ValueError("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: '" + result + "'")
         return result
 
     def set_terminal_high(self, terminal_name):

@@ -1,40 +1,30 @@
-INFO:root:Port: COM1 Speed: 9600
-INFO:root:Port COM1 Speed 9600
-ERROR:root:AsdAsd
-ERROR:JogwheelApp:Abc Jeejee
-ERROR:root:AsdAsd
-ERROR:JogwheelApp:Abc Jeejee
-ERROR:root:AsdAsd
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:root:AsdAsd
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:root:AsdAsd
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:root:AsdAsd
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:root:AsdAsd
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:root:AsdAsd
-ERROR:JogwheelApp:Abc Jeeaaaajee
-ERROR:JogwheelApp:Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: ''
+Abc Jeejee
+2012-07-25 18:48:16,457 - JogwheelApp - ERROR - Abc Jeejee
+2012-07-25 18:49:27,969 - JogwheelApp - ERROR - Abc Jeeaaaajee
+2012-07-25 18:49:40,230 - JogwheelApp - ERROR - Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+Abc Jeeaaaajee
+2012-07-25 18:54:19,282 - JogwheelApp - ERROR - Abc Jeeaaaajee
+2012-07-25 18:55:21,811 - JogwheelApp - ERROR - Abc Jeeaaaajee
+2012-07-25 18:55:22,812 - JogwheelApp - ERROR - Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: ''
 Traceback (most recent call last):
   File "C:/Users/savpek/Documents/GitHub/UsbIOCard-EMC2Component/userspace_component.py", line 23, in main
     jo.update()
@@ -43,8 +33,7 @@ Traceback (most recent call last):
   File "C:\Users\savpek\Documents\GitHub\UsbIOCard-EMC2Component\iocard.py", line 35, in read_terminal
     raise ValueError("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: '" + result + "'")
 ValueError: Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: ''
-ERROR:root:AsdAsd
-ERROR:JogwheelApp:Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: ''
+2012-07-25 18:55:54,642 - JogwheelApp - ERROR - Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: ''
 Traceback (most recent call last):
   File "C:/Users/savpek/Documents/GitHub/UsbIOCard-EMC2Component/userspace_component.py", line 21, in main
     jo.update()
@@ -53,7 +42,7 @@ Traceback (most recent call last):
   File "C:\Users\savpek\Documents\GitHub\UsbIOCard-EMC2Component\iocard.py", line 35, in read_terminal
     raise ValueError("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: '" + result + "'")
 ValueError: Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: ''
-ERROR:JogwheelApp:Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: ''
+2012-07-25 18:56:15,867 - JogwheelApp - ERROR - Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: ''
 Traceback (most recent call last):
   File "C:/Users/savpek/Documents/GitHub/UsbIOCard-EMC2Component/userspace_component.py", line 20, in main
     jo.update()

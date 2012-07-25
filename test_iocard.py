@@ -1,6 +1,6 @@
 import unittest
 from mock import MagicMock
-from usb_io_card_connection import UsbCard, IoCardException
+from iocard import UsbCard, IoCardException
 
 class UsbIoCardConnection_InitTests(unittest.TestCase):
     def setUp(self):
