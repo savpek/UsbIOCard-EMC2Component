@@ -32,7 +32,7 @@
       <file leaf-file-name="iocard.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/iocard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="12" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
+            <state line="29" column="0" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,7 +41,7 @@
       <file leaf-file-name="test_iocard.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_iocard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="19" selection-start="1334" selection-end="1334" vertical-scroll-proportion="0.120080724">
+            <state line="23" column="0" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.39455095">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -99,8 +99,8 @@
         <option value="$PROJECT_DIR$/test_directiondriver.py" />
         <option value="$PROJECT_DIR$/inputs.py" />
         <option value="$PROJECT_DIR$/userspace_component.py" />
-        <option value="$PROJECT_DIR$/iocard.py" />
         <option value="$PROJECT_DIR$/test_iocard.py" />
+        <option value="$PROJECT_DIR$/iocard.py" />
       </list>
     </option>
   </component>
@@ -528,14 +528,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/iocard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
+        <state line="29" column="0" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_iocard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="19" selection-start="1334" selection-end="1334" vertical-scroll-proportion="0.120080724">
+        <state line="23" column="0" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.39455095">
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

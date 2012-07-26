@@ -11,7 +11,8 @@ class IoCardException(Exception):
 
 class UsbCard:
     ERROR_KEYWORD = "ERROR:"
-    TIMEOUT = 1
+    TIMEOUT = 0.05
+    READ_MAX_COUNT = 200
 
     def __init__(self, port, speed, serialInterface=None):
         if serialInterface != None:
@@ -19,11 +20,13 @@ class UsbCard:
         else:
             self.serial_con = serial.Serial(port, speed, timeout=self.TIMEOUT)
 
-
     def read_terminal(self, terminal_name):
         self.serial_con.write("READ " + terminal_name)
 
-        result = self.serial_con.readline()
+        result = self.serial_con.read(self.READ_MAX_COUNT)
+
+        result = result.replace("READ " + terminal_name, "")
+        result = result.strip('\n\r\t ')
 
         if self.ERROR_KEYWORD in result:
             raise IoCardException("IO card returned error, error message: " + result)

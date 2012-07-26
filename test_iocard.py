@@ -19,7 +19,10 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self._set_return_value("")
 
     def test_read_terminal_sends_correctly_formatted_message(self):
-        self._expect_output_to_io(self.usb_card.set_terminal_high, "READ 2.T0", "2.T0", return_value="LOW")
+        self._expect_output_to_io(self.usb_card.read_terminal, "READ 2.T0", "2.T0", iocard_returns="HIGH")
+
+    def test_read_terminal_works_with_echo(self):
+        self._except_value(self.usb_card.read_terminal, "HIGH", "READ 2.T0\n\rHIGH")
 
     def test_read_terminal_returns_values_correctly(self):
         self._except_value(self.usb_card.read_terminal, "LOW", "LOW")
@@ -78,7 +81,7 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self._expect_output_to_io(self.usb_card.set_terminal_low, "SET 2.T0 LOW", "2.T0")
 
     def test_adc_from_terminal_send_correctly_formatted_message(self):
-        self._expect_output_to_io(self.usb_card.adc_of_terminal, "ADC 2.T0", "2.T0", return_value="0")
+        self._expect_output_to_io(self.usb_card.adc_of_terminal, "ADC 2.T0", "2.T0", iocard_returns="0")
 
     def test_adc_from_terminal_returns_number_from_correct_result(self):
         self._except_value(self.usb_card.adc_of_terminal, 0, "0")
@@ -98,13 +101,15 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
 
     def _set_return_value(self, value):
         self.handle_mock.readline = MagicMock(return_value=value)
+        self.handle_mock.read = MagicMock(return_value=value)
 
     def _except_value(self, method, expected_result, value_from_iocard=""):
         self._set_return_value(value_from_iocard)
-        self.assertEqual(method("2.T1"), expected_result)
+        self.assertEqual(method("2.T0"), expected_result)
 
-    def _expect_output_to_io(self, method, expected_value, terminal_name, return_value=""):
-        self._set_return_value(return_value)
+    def _expect_output_to_io(self, method, expected_value, terminal_name, iocard_returns=""):
+        self.handle_mock.inWaiting(return_value=len(iocard_returns))
+        self._set_return_value(iocard_returns)
         method(terminal_name)
         self.handle_mock.write.assert_called_with(expected_value)
 
