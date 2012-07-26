@@ -12,33 +12,33 @@ class UsbIoCardConnection_InitTests(unittest.TestCase):
 class UsbIoCardConnection_Tests(unittest.TestCase):
     def setUp(self):
         self.handle_mock = MagicMock()
-        self.serial_mock = MagicMock
+        self.serial_mock = MagicMock()
         self.serial_mock.Serial = MagicMock(return_value=self.handle_mock)
         self.usb_card = UsbCard("COM1", 9600, serialInterface=self.serial_mock)
         self.handle_mock.inWaiting(return_value = 10)
         self._set_return_value("")
 
     def test_read_terminal_sends_correctly_formatted_message(self):
-        self.handle_mock.readline = MagicMock(return_value = "LOW")
+        self._set_return_value("LOW")
         self.usb_card.read_terminal("2.T0")
         self.handle_mock.write.assert_called_with("READ 2.T0")
 
     def test_read_terminal_returns_values_correctly(self):
-        self.handle_mock.readline = MagicMock(return_value = "LOW")
+        self._set_return_value("LOW")
         result = self.usb_card.read_terminal("2.T0")
         self.assertEquals(result, "LOW")
 
-        self.handle_mock.readline = MagicMock(return_value = "HIGH")
+        self._set_return_value("HIGH")
         result = self.usb_card.read_terminal("2.T0")
         self.assertEquals(result, "HIGH")
 
     def test_read_terminal_throws_exception_if_return_value_is_invalid(self):
-        self.handle_mock.readline = MagicMock(return_value = "auu")
+        self._set_return_value("auu")
         with self.assertRaises(ValueError):
             self.usb_card.read_terminal("2.T0")
 
     def test_read_terminal_throws_exception_if_error_keyword_is_contained_in_return_value(self):
-        self.handle_mock.readline = MagicMock(return_value = "ERROR: Invalid terminal name")
+        self._set_return_value("ERROR: Invalid terminal name")
         with self.assertRaises(IoCardException):
             self.usb_card.read_terminal("2.T0")
 
