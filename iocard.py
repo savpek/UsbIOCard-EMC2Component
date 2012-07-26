@@ -5,7 +5,7 @@ logging.basicConfig(filename='app.log', level=logging.INFO)
 
 class IoCardException(Exception):
     def _init__(self, value):
-        self.value = value
+        self.message = value + "av"
     def __str__(self):
         return repr(self.value)
 
@@ -21,10 +21,9 @@ class UsbCard:
             self.serial_con = serial.Serial(port, speed, timeout=self.TIMEOUT)
 
     def read_terminal(self, terminal_name):
-        self.serial_con.write("READ " + terminal_name)
+        self.serial_con.write("READ " + terminal_name + "\n")
 
         result = self.serial_con.read(self.READ_MAX_COUNT)
-
         result = result.replace("READ " + terminal_name, "")
         result = result.strip('\n\r\t ')
 
@@ -33,22 +32,23 @@ class UsbCard:
 
         if result != "HIGH" and result != "LOW":
             raise ValueError("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: '" + result + "'")
+
         return result
 
     def set_terminal_high(self, terminal_name):
-        self.serial_con.write("SET "  + terminal_name + " HIGH")
+        self.serial_con.write("SET "  + terminal_name + " HIGH\n")
 
         if(self.serial_con.inWaiting() != 0):
             raise IoCardException("Error occurred during SET, error: " + self.serial_con.readline())
 
     def set_terminal_low(self, terminal_name):
-        self.serial_con.write("SET "  + terminal_name + " LOW")
+        self.serial_con.write("SET "  + terminal_name + " LOW\n")
 
         if(self.serial_con.inWaiting() != 0):
             raise IoCardException("Error occurred during SET, error: " + self.serial_con.readline())
 
     def adc_of_terminal(self, terminal_name):
-        self.serial_con.write("ADC " + terminal_name)
+        self.serial_con.write("ADC " + terminal_name + "\n")
 
         received_line = self.serial_con.readline()
 

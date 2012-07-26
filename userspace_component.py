@@ -13,8 +13,7 @@ log.addHandler(logHandler)
 
 def main():
     jo = joystic.DirController(ser)
-    jo.x_minus_name = "2.T1"
-    jo.y_minus_name = "2.T2"
+    jo.x_minus_name = "5.T1"
     #try:
     while True:
         jo.update()
