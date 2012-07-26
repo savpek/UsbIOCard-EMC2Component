@@ -48,6 +48,7 @@ class UsbCard:
         self.serial_con.write("ADC " + terminal_name)
 
         received_line = self.serial_con.readline()
+
         try:
             return float(received_line)
         except (ValueError):
