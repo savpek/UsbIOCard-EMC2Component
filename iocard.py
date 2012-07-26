@@ -13,9 +13,6 @@ class UsbCard:
     ERROR_KEYWORD = "ERROR:"
     TIMEOUT = 1
 
-    def __init__(self, port, speed):
-        self.serial_con = serial.Serial(port, speed, timeout=self.TIMEOUT)
-
     def __init__(self, port, speed, serialInterface=None):
         if serialInterface != None:
             self.serial_con = serialInterface.Serial(port, speed, timeout=self.TIMEOUT)

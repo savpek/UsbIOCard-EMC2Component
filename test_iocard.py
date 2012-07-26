@@ -3,11 +3,9 @@ from mock import MagicMock
 from iocard import UsbCard, IoCardException
 
 class UsbIoCardConnection_InitTests(unittest.TestCase):
-    def setUp(self):
-        self.serial_mock = MagicMock()
-
     def test_connection_is_opened_with_correct_arguments(self):
-        usb_card = UsbCard(self.serial_mock, "COM1", 9600)
+        self.serial_mock = MagicMock()
+        UsbCard("COM1", 9600, serialInterface=self.serial_mock)
         # Timeout must be set to 1! Otherwise readline will hang forever!
         self.serial_mock.Serial.assert_called_with("COM1", 9600, timeout=1)
 
@@ -16,7 +14,7 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self.handle_mock = MagicMock()
         self.serial_mock = MagicMock
         self.serial_mock.Serial = MagicMock(return_value=self.handle_mock)
-        self.usb_card = UsbCard(self.serial_mock, "COM1", 9600)
+        self.usb_card = UsbCard("COM1", 9600, serialInterface=self.serial_mock)
         self.handle_mock.inWaiting(return_value = 10)
 
     def test_read_terminal_sends_correctly_formatted_message(self):
@@ -123,3 +121,7 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
 
         with self.assertRaises(IoCardException):
             self.usb_card.adc_of_terminal("2.T2")
+
+    def _iocard_return_value(self, value):
+        self.handle_mock.readline = MagicMock(return_value=value)
+

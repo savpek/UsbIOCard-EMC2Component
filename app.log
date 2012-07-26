@@ -62,3 +62,21 @@ Traceback (most recent call last):
   File "C:\Users\savpek\Documents\GitHub\UsbIOCard-EMC2Component\iocard.py", line 35, in read_terminal
     raise ValueError("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: '" + result + "'")
 ValueError: Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: ''
+ERROR:JogwheelApp:Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: ''
+Traceback (most recent call last):
+  File "C:/Users/savpek/Documents/GitHub/UsbIOCard-EMC2Component/userspace_component.py", line 20, in main
+    jo.update()
+  File "C:\Users\savpek\Documents\GitHub\UsbIOCard-EMC2Component\joystic.py", line 21, in update
+    self.x_minus_value = self.connection.read_terminal(self.x_minus_name)
+  File "C:\Users\savpek\Documents\GitHub\UsbIOCard-EMC2Component\iocard.py", line 35, in read_terminal
+    raise ValueError("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: '" + result + "'")
+ValueError: Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: ''
+ERROR:JogwheelApp:Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: 'READ 2.T1'
+Traceback (most recent call last):
+  File "C:/Users/savpek/Documents/GitHub/UsbIOCard-EMC2Component/userspace_component.py", line 20, in main
+    jo.update()
+  File "C:\Users\savpek\Documents\GitHub\UsbIOCard-EMC2Component\joystic.py", line 21, in update
+    self.x_minus_value = self.connection.read_terminal(self.x_minus_name)
+  File "C:\Users\savpek\Documents\GitHub\UsbIOCard-EMC2Component\iocard.py", line 35, in read_terminal
+    raise ValueError("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: '" + result + "'")
+ValueError: Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: 'READ 2.T1'
