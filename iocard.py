@@ -4,10 +4,7 @@ import serial
 logging.basicConfig(filename='app.log', level=logging.INFO)
 
 class IoCardException(Exception):
-    def _init__(self, value):
-        self.message = value + "av"
-    def __str__(self):
-        return repr(self.value)
+    pass
 
 class UsbCard:
     ERROR_KEYWORD = "ERROR:"

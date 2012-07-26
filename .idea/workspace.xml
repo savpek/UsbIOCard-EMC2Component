@@ -32,7 +32,7 @@
       <file leaf-file-name="iocard.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/iocard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="56" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.0">
+            <state line="35" column="0" selection-start="1190" selection-end="1190" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,7 +41,7 @@
       <file leaf-file-name="test_iocard.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_iocard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="0" selection-start="5231" selection-end="5231" vertical-scroll-proportion="0.9721408">
+            <state line="42" column="0" selection-start="1943" selection-end="1943" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -528,14 +528,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/iocard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="56" selection-start="1663" selection-end="1663" vertical-scroll-proportion="0.0">
+        <state line="35" column="0" selection-start="1190" selection-end="1190" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_iocard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="0" selection-start="5231" selection-end="5231" vertical-scroll-proportion="0.9721408">
+        <state line="42" column="0" selection-start="1943" selection-end="1943" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
