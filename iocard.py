@@ -20,8 +20,7 @@ class UsbCard:
     def read_terminal(self, terminal_name):
         result = self._get_result("READ " + terminal_name)
 
-        if self.ERROR_KEYWORD in result:
-            raise IoCardException("IO card returned error, error message: " + result)
+        self._check_for_error_keyword(result)
 
         if result != "HIGH" and result != "LOW":
             raise ValueError("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: '" + result + "'")
@@ -30,18 +29,16 @@ class UsbCard:
 
     def set_terminal_high(self, terminal_name):
         result = self._get_result("SET " + terminal_name + " HIGH")
-
-        if self.ERROR_KEYWORD in result:
-            raise IoCardException("Error occurred during SET, error: " + self.serial_con.readline())
+        self._check_for_error_keyword(result)
 
     def set_terminal_low(self, terminal_name):
         result = self._get_result("SET " + terminal_name + " LOW")
-
-        if self.ERROR_KEYWORD in result:
-            raise IoCardException("Error occurred during SET, error: " + self.serial_con.readline())
+        self._check_for_error_keyword(result)
 
     def adc_of_terminal(self, terminal_name):
         result = self._get_result("ADC " + terminal_name)
+
+        self._check_for_error_keyword(result)
 
         try:
             return float(result)
@@ -55,4 +52,8 @@ class UsbCard:
 
         result = result.replace(command, "") # Remove echo.
         return result.strip('\n\r\t ')
+
+    def _check_for_error_keyword(self, result):
+        if self.ERROR_KEYWORD in result:
+            raise IoCardException("Result contained error keyword:" + self.serial_con.readline())
 
