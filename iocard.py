@@ -21,11 +21,7 @@ class UsbCard:
             self.serial_con = serial.Serial(port, speed, timeout=self.TIMEOUT)
 
     def read_terminal(self, terminal_name):
-        self.serial_con.write("READ " + terminal_name + "\n")
-
-        result = self.serial_con.read(self.READ_MAX_COUNT)
-        result = result.replace("READ " + terminal_name, "")
-        result = result.strip('\n\r\t ')
+        result = self._get_result("READ " + terminal_name)
 
         if self.ERROR_KEYWORD in result:
             raise IoCardException("IO card returned error, error message: " + result)
@@ -36,23 +32,30 @@ class UsbCard:
         return result
 
     def set_terminal_high(self, terminal_name):
-        self.serial_con.write("SET "  + terminal_name + " HIGH\n")
+        result = self._get_result("SET " + terminal_name + " HIGH")
 
-        if(self.serial_con.inWaiting() != 0):
+        if self.ERROR_KEYWORD in result:
             raise IoCardException("Error occurred during SET, error: " + self.serial_con.readline())
 
     def set_terminal_low(self, terminal_name):
-        self.serial_con.write("SET "  + terminal_name + " LOW\n")
+        result = self._get_result("SET " + terminal_name + " LOW")
 
-        if(self.serial_con.inWaiting() != 0):
+        if self.ERROR_KEYWORD in result:
             raise IoCardException("Error occurred during SET, error: " + self.serial_con.readline())
 
     def adc_of_terminal(self, terminal_name):
-        self.serial_con.write("ADC " + terminal_name + "\n")
-
-        received_line = self.serial_con.readline()
+        result = self._get_result("ADC " + terminal_name)
 
         try:
-            return float(received_line)
-        except (ValueError):
-            raise IoCardException("Invalid value returned from IO card, value returned: " + received_line)
+            return float(result)
+        except ValueError:
+            raise IoCardException("Invalid value returned from IO card, value returned: " + result)
+
+    def _get_result(self, command):
+        self.serial_con.write(command+"\n")
+
+        result = self.serial_con.read(self.READ_MAX_COUNT)
+
+        result = result.replace(command, "") # Remove echo.
+        return result.strip('\n\r\t ')
+
