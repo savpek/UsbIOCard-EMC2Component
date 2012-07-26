@@ -53,6 +53,3 @@ class UsbCard:
             return float(received_line)
         except (ValueError):
             raise IoCardException("Invalid value returned from IO card, value returned: " + received_line)
-
-
-
