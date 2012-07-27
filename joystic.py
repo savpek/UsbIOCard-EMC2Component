@@ -20,7 +20,7 @@ class DirController:
         if self.x_minus_name is not None:
             self.x_minus_value = self.connection.read_terminal(self.x_minus_name)
         if self.y_plus_name is not None:
-            self.y_plus_name = self.connection.read_terminal(self.y_plus_name)
+            self.y_plus_value = self.connection.read_terminal(self.y_plus_name)
         if self.y_minus_name is not None:
-            self.y_minus_name = self.connection.read_terminal(self.y_minus_name)
+            self.y_minus_value = self.connection.read_terminal(self.y_minus_name)
 

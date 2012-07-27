@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/userspace_component.py" line="16" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/userspace_component.py" line="22" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e71d934b-83b3-4083-b98f-cb0c8787fe34" name="Default" comment="" />
@@ -29,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="iocard.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="iocard.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/iocard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="58" selection-start="282" selection-end="282" vertical-scroll-proportion="0.10797174">
+            <state line="18" column="0" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,7 +41,29 @@
       <file leaf-file-name="test_iocard.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_iocard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="74" selection-start="2751" selection-end="2751" vertical-scroll-proportion="0.0">
+            <state line="45" column="33" selection-start="2142" selection-end="2142" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mapper.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mapper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="43" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#128#149#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_mapper.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_mapper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="71" selection-start="527" selection-end="527" vertical-scroll-proportion="0.29162464">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -52,7 +74,7 @@
       <file leaf-file-name="joystic.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/joystic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="32" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
+            <state line="24" column="29" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -61,7 +83,7 @@
       <file leaf-file-name="test_joystic.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_joystic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="41" selection-start="909" selection-end="909" vertical-scroll-proportion="0.0">
+            <state line="17" column="0" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -70,7 +92,7 @@
       <file leaf-file-name="userspace_component.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userspace_component.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="14" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
+            <state line="20" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -98,9 +120,12 @@
         <option value="$PROJECT_DIR$/directiondriver.py" />
         <option value="$PROJECT_DIR$/test_directiondriver.py" />
         <option value="$PROJECT_DIR$/inputs.py" />
-        <option value="$PROJECT_DIR$/userspace_component.py" />
         <option value="$PROJECT_DIR$/test_iocard.py" />
         <option value="$PROJECT_DIR$/iocard.py" />
+        <option value="$PROJECT_DIR$/joystic.py" />
+        <option value="$PROJECT_DIR$/userspace_component.py" />
+        <option value="$PROJECT_DIR$/test_mapper.py" />
+        <option value="$PROJECT_DIR$/mapper.py" />
       </list>
     </option>
   </component>
@@ -185,7 +210,7 @@
       <PyConsoleSettings />
     </option>
   </component>
-  <component name="RunManager" selected="Python's test.Unittests in UsbIoCardConnection_Tests">
+  <component name="RunManager" selected="Python's test.Unittests in test_mapper">
     <configuration default="false" name="Unittests in test_iocard" type="tests" factoryName="Unittests" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -245,6 +270,27 @@
       <option name="METHOD_NAME" value="" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in test_mapper" type="tests" factoryName="Unittests" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="C:/Python27/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="USB-IO-CARD-DRIVER-FOR-LINUX-CNC" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_mapper.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -349,11 +395,12 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python's test.Unittests in test_iocard" />
       <item index="1" class="java.lang.String" itemvalue="Python's test.Unnamed (1)" />
       <item index="2" class="java.lang.String" itemvalue="Python.userspace_component" />
       <item index="3" class="java.lang.String" itemvalue="Python's test.Unittests in UsbIoCardConnection_Tests" />
+      <item index="4" class="java.lang.String" itemvalue="Python's test.Unittests in test_mapper" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -496,49 +543,67 @@
         <state line="85" column="0" selection-start="3355" selection-end="3355" vertical-scroll-proportion="0.01715439" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userspace_component.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="11" selection-end="11" vertical-scroll-proportion="0.01715439">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/joystic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="32" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_joystic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="41" selection-start="909" selection-end="909" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/userspace_component.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="14" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_iocard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="74" selection-start="2751" selection-end="2751" vertical-scroll-proportion="0.0">
+        <state line="45" column="33" selection-start="2142" selection-end="2142" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/userspace_component.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="100" selection-start="1178" selection-end="1178" vertical-scroll-proportion="0.22805247">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userspace_component.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/joystic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="29" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/iocard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="58" selection-start="282" selection-end="282" vertical-scroll-proportion="0.10797174">
+        <state line="18" column="0" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_joystic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="539" selection-end="539" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="43" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#128#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_mapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="71" selection-start="527" selection-end="527" vertical-scroll-proportion="0.29162464">
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

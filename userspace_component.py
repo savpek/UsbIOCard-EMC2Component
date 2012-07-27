@@ -11,14 +11,18 @@ logHandler = logging.FileHandler('userspace_component.log')
 logHandler.setFormatter(formatter)
 log.addHandler(logHandler)
 
+# Settings for XY joystic.
+xy_joystic = joystic.DirController(ser)
+xy_joystic.x_plus_name = "5.T1"
+xy_joystic.x_minus_name = "5.T2"
+xy_joystic.y_plus_name = "5.T3"
+xy_joystic.y_minus_name = "5.T4"
+
+
 def main():
-    jo = joystic.DirController(ser)
-    jo.x_minus_name = "5.T1"
     #try:
     while True:
-        jo.update()
-        print jo.x_minus_value
-        time.sleep(3)
+        xy_joystic.update()
     #except ValueError as e:
     #    log.exception(e)
 
