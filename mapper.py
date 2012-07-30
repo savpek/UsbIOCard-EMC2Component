@@ -11,6 +11,7 @@ class Input:
     signal_name = None
     terminal_name = None
     custom_modifier = None
+    pin_handle = None
 
     def __init__(self, terminal_name, signal_name, custom_modifier=None):
         self.terminal_name = terminal_name
@@ -19,24 +20,62 @@ class Input:
 
     def map_to(self, component):
         component.newpin(self.signal_name, hal.HAL_FLOAT, hal.HAL_IN)
+        pin_handle = component[self.signal_name]
 
     def update(self, iocard):
         pass
 
+class HandleBase:
+    signal = None
+    terminal = None
+    output_modifier = None
+
+    def __init__(self, signal_handle, terminal_name, output_modifier):
+        self.signal_name = signal_handle
+        self.terminal_name = terminal_name
+        self.output_modifier = output_modifier
+
+class InputHandle(HandleBase):
+    def io_operation(self, iocard):
+        #self.signal_handle = iocard.read_terminal(self.terminal)
+        pass
+
+class OutputHandle(HandleBase):
+    def io_operation(self):
+        pass
+
+class AdcHandle(HandleBase):
+    def io_operation(self):
+        pass
+
 class Component:
-    iomap = ()
+    handles = []
 
     def __init__(self, iocard, component_name, injected_component=None):
         self.iocard = iocard
+        self.handles = []
 
-        if injected_component is not None:
-            pass
+        if injected_component is None:
+            self.component = hel.component(component_name)
         else:
-            self.component = hal.component(component_name)
+            self.component = injected_component
 
     def update(self):
-        for io in self.iomap:
-            self.iocard.read_terminal(io[0])
+        pass
+
+    def add_input(self, signal_name, terminal_name, output_modifier=None):
+        self.component.newpin(signal_name, hal.HAL_FLOAT, hal.HAL_IN)
+        self.handles.append(InputHandle(signal_name, terminal_name, output_modifier))
+
+    def add_output(self, signal_name, terminal_name, output_modifier=None):
+        self.component.newpin(signal_name, hal.HAL_FLOAT, hal.HAL_OUT)
+        self.handles.append(OutputHandle(signal_name, terminal_name, output_modifier))
+
+    def add_adc(self):
+        pass
+
+    def set_ready(self):
+        pass
 
 """
 #!/usr/bin/python
