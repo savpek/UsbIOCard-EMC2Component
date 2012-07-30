@@ -1,9 +1,28 @@
 import unittest
 import iocard
-from mock import MagicMock, call
+from mock import MagicMock, call, patch
 import mapper
+import hal
 
 __author__ = 'savpek'
+
+class Input_UnitTests(unittest.TestCase):
+    def setUp(self):
+        pass
+
+    def test_input_set_properties_correctly(self):
+        modifier = lambda x:x
+        input = mapper.Input("2.T0", "2T0", modifier)
+        self.assertEqual("2.T0", input.terminal_name)
+        self.assertEqual("2T0", input.signal_name)
+        self.assertEqual(modifier, input.custom_modifier)
+
+    def test_input_maps_component_correctly(self):
+        component = MagicMock()
+        input = mapper.Input("2.T0", "2T0")
+        input.map_to(component)
+
+        component.newpin.assert_called_once_with("2T0", hal.HAL_FLOAT, hal.HAL_IN)
 
 class Component_UnitTests(unittest.TestCase):
     def setUp(self):
@@ -25,4 +44,10 @@ class Component_UnitTests(unittest.TestCase):
         self.mapper.update()
         expected = [call("2.T2"), call("2.T3")]
         self.assertEquals(self.iocard.read_terminal.call_args_list, expected)
+
+    def test_update_updates_readed_values_to_emc_signals(self):
+        self.mapper.iomap = ("2.T2", "2T2", "IN"), ("2.T3", "2T3", "IN")
+        self.mapper.update()
+
+
 

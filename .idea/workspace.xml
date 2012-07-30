@@ -2,6 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/userspace_component.py" line="22" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/test_mapper.py" line="47" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e71d934b-83b3-4083-b98f-cb0c8787fe34" name="Default" comment="" />
@@ -52,7 +53,7 @@
       <file leaf-file-name="mapper.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="43" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0">
+            <state line="20" column="43" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#128#149#0" expanded="true" />
               </folding>
@@ -63,10 +64,19 @@
       <file leaf-file-name="test_mapper.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_mapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="71" selection-start="527" selection-end="527" vertical-scroll-proportion="0.29162464">
+            <state line="24" column="73" selection-start="728" selection-end="728" vertical-scroll-proportion="0.5982405">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hal.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hal.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="13" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,7 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/xyz_controls.py" />
         <option value="$PROJECT_DIR$/usb_io_card_connection.tests.py" />
         <option value="$APPLICATION_HOME_DIR$/helpers/pycharm/utrunner.py" />
         <option value="$PROJECT_DIR$/test_usb_io_card_connection.py" />
@@ -124,6 +133,7 @@
         <option value="$PROJECT_DIR$/iocard.py" />
         <option value="$PROJECT_DIR$/joystic.py" />
         <option value="$PROJECT_DIR$/userspace_component.py" />
+        <option value="$PROJECT_DIR$/hal.py" />
         <option value="$PROJECT_DIR$/test_mapper.py" />
         <option value="$PROJECT_DIR$/mapper.py" />
       </list>
@@ -197,7 +207,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -463,7 +473,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30413386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30413386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -589,9 +599,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="13" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="43" selection-start="565" selection-end="565" vertical-scroll-proportion="0.0">
+        <state line="20" column="43" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#128#149#0" expanded="true" />
           </folding>
@@ -600,7 +617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_mapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="71" selection-start="527" selection-end="527" vertical-scroll-proportion="0.29162464">
+        <state line="24" column="73" selection-start="728" selection-end="728" vertical-scroll-proportion="0.5982405">
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
