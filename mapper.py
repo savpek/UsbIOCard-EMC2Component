@@ -26,19 +26,18 @@ class Input:
         pass
 
 class HandleBase:
-    signal = None
-    terminal = None
-    output_modifier = None
-
-    def __init__(self, signal_handle, terminal_name, output_modifier):
+    def __init__(self, signal_handle, terminal_name, output_modifier=None):
         self.signal_name = signal_handle
         self.terminal_name = terminal_name
-        self.output_modifier = output_modifier
+
+        if output_modifier is None:
+            self.output_modifier = lambda x:x # Does nothing.
+        else:
+            self.output_modifier = output_modifier
 
 class InputHandle(HandleBase):
-    def io_operation(self, iocard):
-        #self.signal_handle = iocard.read_terminal(self.terminal)
-        pass
+    def io_operation(self, iocard, component):
+        component[self.signal_name] = self.output_modifier(iocard.read_terminal(self.terminal_name))
 
 class OutputHandle(HandleBase):
     def io_operation(self):
