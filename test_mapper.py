@@ -38,6 +38,12 @@ class Component2_UnitTests(unittest.TestCase):
         under_test.io_operation(self.iocard, self.component)
         self.iocard.set_terminal_low.assert_called_once_with("2.T0")
 
+    def test_outputhandle_custom_modifier_works_correctly(self):
+        self.component = {'2T0':False}
+        under_test = mapper.OutputHandle("2T0", "2.T0", lambda x: not x) # Simply inverts result.
+        under_test.io_operation(self.iocard, self.component)
+        self.iocard.set_terminal_high.assert_called_once_with("2.T0") # Notice inverted call.
+
 class Component_UnitTests(unittest.TestCase):
     def setUp(self):
         self.emc_component = MagicMock()

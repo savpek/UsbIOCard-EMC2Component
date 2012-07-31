@@ -41,7 +41,7 @@ class InputHandle(HandleBase):
 
 class OutputHandle(HandleBase):
     def io_operation(self, iocard, component):
-        if component[self.signal_name]:
+        if self.output_modifier(component[self.signal_name]):
             iocard.set_terminal_high(self.terminal_name)
         else:
             iocard.set_terminal_low(self.terminal_name)
