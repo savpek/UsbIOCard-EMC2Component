@@ -6,34 +6,37 @@ import hal
 
 class Component2_UnitTests(unittest.TestCase):
     def setUp(self):
-        self.emc_component = MagicMock()
+        self.component = {'2T1':"NOT SET"} # Simulates hal component signals as dictionary behavior.
         self.iocard = MagicMock()
-        self.mapper = mapper.Component(
-            self.iocard,
-            "test_component",
-            injected_component=self.emc_component)
-
-    def test_inputhandle_io_reads_from_terminal(self):
-        a = mapper.InputHandle("2T0", "2.T0", None)
-        a.io_operation(self.iocard, self.emc_component)
-        self.iocard.read_terminal.assert_called_once_with("2.T0")
 
     def test_inputhandle_io_set_readed_value_to_signal(self):
         self.iocard.read_terminal = MagicMock(return_value="EXPECTED")
-        component = {'2T1':"NOT SET"} # Simulates hal component signals as dictionary behavior.
 
         under_test = mapper.InputHandle("2T1", "2.T0", None)
-        under_test.io_operation(self.iocard, component)
+        under_test.io_operation(self.iocard, self.component)
 
-        self.assertEquals(component["2T1"], "EXPECTED")
+        self.iocard.read_terminal.assert_called_once_with("2.T0")
+        self.assertEquals(self.component["2T1"], "EXPECTED")
 
     def test_inputhandle_io_custom_modifier_function_works(self):
         self.iocard.read_terminal = MagicMock(return_value=100)
-        component = {'2T1':"NOT SET"}
-        under_test = mapper.InputHandle("2T1", "2.T0", lambda x:2*x)
-        under_test.io_operation(self.iocard, component)
 
-        self.assertEquals(component["2T1"], 200)
+        under_test = mapper.InputHandle("2T1", "2.T0", lambda x:2*x)
+        under_test.io_operation(self.iocard, self.component)
+
+        self.assertEquals(self.component["2T1"], 200)
+
+    def test_outputhandle_send_high_signal_correctly_to_output(self):
+        self.component = {'2T1':True}
+        under_test = mapper.OutputHandle("2T1", "2.T1", None)
+        under_test.io_operation(self.iocard, self.component)
+        self.iocard.set_terminal_high.assert_called_once_with("2.T1")
+
+    def test_outputhandle_send_low_signal_correctly_to_output(self):
+        self.component = {'2T0':False}
+        under_test = mapper.OutputHandle("2T0", "2.T0", None)
+        under_test.io_operation(self.iocard, self.component)
+        self.iocard.set_terminal_low.assert_called_once_with("2.T0")
 
 class Component_UnitTests(unittest.TestCase):
     def setUp(self):

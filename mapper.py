@@ -40,8 +40,11 @@ class InputHandle(HandleBase):
         component[self.signal_name] = self.output_modifier(iocard.read_terminal(self.terminal_name))
 
 class OutputHandle(HandleBase):
-    def io_operation(self):
-        pass
+    def io_operation(self, iocard, component):
+        if component[self.signal_name]:
+            iocard.set_terminal_high(self.terminal_name)
+        else:
+            iocard.set_terminal_low(self.terminal_name)
 
 class AdcHandle(HandleBase):
     def io_operation(self):

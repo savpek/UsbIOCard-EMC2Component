@@ -49,10 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mapper.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="mapper.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.0">
+            <state line="47" column="0" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.6979472">
               <folding>
                 <element signature="e#128#149#0" expanded="true" />
               </folding>
@@ -60,10 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_mapper.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="test_mapper.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_mapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="54" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.5660949">
+            <state line="32" column="44" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -133,8 +133,8 @@
         <option value="$PROJECT_DIR$/joystic.py" />
         <option value="$PROJECT_DIR$/userspace_component.py" />
         <option value="$PROJECT_DIR$/hal.py" />
-        <option value="$PROJECT_DIR$/mapper.py" />
         <option value="$PROJECT_DIR$/test_mapper.py" />
+        <option value="$PROJECT_DIR$/mapper.py" />
       </list>
     </option>
   </component>
@@ -470,11 +470,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1638207" sideWeight="0.69586617" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1638207" sideWeight="0.47933072" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1638207" sideWeight="0.20964567" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30413386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30413386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -607,20 +607,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mapper.py">
+    <entry file="file://$PROJECT_DIR$/test_mapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.0">
+        <state line="32" column="44" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#128#149#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_mapper.py">
+    <entry file="file://$PROJECT_DIR$/mapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="54" selection-start="1312" selection-end="1312" vertical-scroll-proportion="0.5660949">
+        <state line="47" column="0" selection-start="1491" selection-end="1491" vertical-scroll-proportion="0.6979472">
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#128#149#0" expanded="true" />
           </folding>
         </state>
       </provider>
