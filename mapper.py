@@ -63,7 +63,8 @@ class Component:
             self.component = injected_component
 
     def update(self):
-        pass
+        for x in self.handles:
+            x.io_operation(self.iocard, self.component)
 
     def add_input(self, signal_name, terminal_name, output_modifier=None):
         self.component.newpin(signal_name, hal.HAL_FLOAT, hal.HAL_IN)

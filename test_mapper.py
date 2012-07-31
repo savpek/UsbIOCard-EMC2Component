@@ -83,3 +83,13 @@ class Component_UnitTests(unittest.TestCase):
         self.mapper.add_output("2T3", "2.T3")
         self.emc_component.newpin.assert_called_once_with("2T3", hal.HAL_FLOAT, hal.HAL_OUT)
 
+    def test_update_runs_io_operation_for_all_items_in_list(self):
+        item1 = MagicMock(mapper.InputHandle)
+        item2 = MagicMock(mapper.OutputHandle)
+        self.mapper.handles.append(item1)
+        self.mapper.handles.append(item2)
+        self.mapper.update()
+        self.assert_(item1.io_operation.called)
+        self.assert_(item2.io_operation.called)
+
+
