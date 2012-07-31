@@ -2,28 +2,6 @@
 # update will fetch all states from IO card and update them to EMC component.
 from mock import call
 import hal
-import iocard
-
-def _do_nothing(x):
-    return x
-
-class Input:
-    signal_name = None
-    terminal_name = None
-    custom_modifier = None
-    pin_handle = None
-
-    def __init__(self, terminal_name, signal_name, custom_modifier=None):
-        self.terminal_name = terminal_name
-        self.signal_name = signal_name
-        self.custom_modifier = custom_modifier
-
-    def map_to(self, component):
-        component.newpin(self.signal_name, hal.HAL_FLOAT, hal.HAL_IN)
-        pin_handle = component[self.signal_name]
-
-    def update(self, iocard):
-        pass
 
 class HandleBase:
     def __init__(self, signal_handle, terminal_name, output_modifier=None):
@@ -58,7 +36,7 @@ class Component:
         self.handles = []
 
         if injected_component is None:
-            self.component = hel.component(component_name)
+            self.component = hal.component(component_name)
         else:
             self.component = injected_component
 

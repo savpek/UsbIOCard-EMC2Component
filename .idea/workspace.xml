@@ -14,6 +14,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/USB-IO-CARD-DRIVER-FOR-LINUX-CNC$Unittests_in_test_mapper.coverage" NAME="Unittests in test_mapper Coverage Results" MODIFIED="1343766040230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/USB-IO-CARD-DRIVER-FOR-LINUX-CNC$Unittests_in_test_iocard.coverage" NAME="Unittests in test_iocard Coverage Results" MODIFIED="1343766165728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="1" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -38,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_iocard.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="test_iocard.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_iocard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="33" selection-start="2142" selection-end="2142" vertical-scroll-proportion="0.0">
+            <state line="13" column="37" selection-start="570" selection-end="570" vertical-scroll-proportion="0.3240469">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -52,7 +59,7 @@
       <file leaf-file-name="mapper.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="13" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0">
+            <state line="22" column="40" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#128#149#0" expanded="true" />
               </folding>
@@ -80,10 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userspace_component.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="userspace_component.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/userspace_component.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.3430878">
+            <state line="21" column="10" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -110,13 +117,13 @@
         <option value="$PROJECT_DIR$/directiondriver.py" />
         <option value="$PROJECT_DIR$/test_directiondriver.py" />
         <option value="$PROJECT_DIR$/inputs.py" />
-        <option value="$PROJECT_DIR$/test_iocard.py" />
         <option value="$PROJECT_DIR$/iocard.py" />
         <option value="$PROJECT_DIR$/joystic.py" />
         <option value="$PROJECT_DIR$/userspace_component.py" />
         <option value="$PROJECT_DIR$/hal.py" />
         <option value="$PROJECT_DIR$/test_mapper.py" />
         <option value="$PROJECT_DIR$/mapper.py" />
+        <option value="$PROJECT_DIR$/test_iocard.py" />
       </list>
     </option>
   </component>
@@ -188,7 +195,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
+    <property name="options.lastSelected" value="coverage" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -201,32 +208,10 @@
       <PyConsoleSettings />
     </option>
   </component>
-  <component name="RunManager" selected="Python's test.Unittests in test_mapper">
-    <configuration default="false" name="Unittests in test_iocard" type="tests" factoryName="Unittests" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="USB-IO-CARD-DRIVER-FOR-LINUX-CNC" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\savpek\Dropbox\PYTHON\USB-IO-CARD-DRIVER-FOR-LINUX-CNC\test_iocard.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <RunnerSettings RunnerId="PythonCover" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonCover" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
+  <component name="PyCoverageOptionsProvider">
+    <option name="myUseBundledCoveragePy" value="true" />
+  </component>
+  <component name="RunManager" selected="Python's test.Unittests in test_iocard">
     <configuration default="false" name="userspace_component" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -286,8 +271,33 @@
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
       <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonCover" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonCover" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in test_iocard" type="tests" factoryName="Unittests" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="C:/Python27/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="USB-IO-CARD-DRIVER-FOR-LINUX-CNC" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_iocard.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <RunnerSettings RunnerId="PythonCover" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonCover" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -389,11 +399,11 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python's test.Unittests in test_iocard" />
-      <item index="1" class="java.lang.String" itemvalue="Python's test.Unnamed (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.userspace_component" />
-      <item index="3" class="java.lang.String" itemvalue="Python's test.Unittests in UsbIoCardConnection_Tests" />
-      <item index="4" class="java.lang.String" itemvalue="Python's test.Unittests in test_mapper" />
+      <item index="0" class="java.lang.String" itemvalue="Python's test.Unnamed (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.userspace_component" />
+      <item index="2" class="java.lang.String" itemvalue="Python's test.Unittests in UsbIoCardConnection_Tests" />
+      <item index="3" class="java.lang.String" itemvalue="Python's test.Unittests in test_mapper" />
+      <item index="4" class="java.lang.String" itemvalue="Python's test.Unittests in test_iocard" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -448,15 +458,16 @@
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32959402" sideWeight="0.69586617" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1638207" sideWeight="0.6909449" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16399573" sideWeight="0.47933072" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1638207" sideWeight="0.30216536" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16399573" sideWeight="0.20964567" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30413386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30413386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -536,19 +547,21 @@
         <state line="85" column="0" selection-start="3355" selection-end="3355" vertical-scroll-proportion="0.01715439" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_iocard.py">
+    <entry file="file://$PROJECT_DIR$/test_mapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="33" selection-start="2142" selection-end="2142" vertical-scroll-proportion="0.0">
+        <state line="44" column="92" selection-start="1960" selection-end="1960" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hal.py">
+    <entry file="file://$PROJECT_DIR$/userspace_component.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="7" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="21" column="10" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -559,29 +572,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_mapper.py">
+    <entry file="file://$PROJECT_DIR$/hal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="92" selection-start="1960" selection-end="1960" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+        <state line="6" column="7" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="13" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0">
+        <state line="22" column="40" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#128#149#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userspace_component.py">
+    <entry file="file://$PROJECT_DIR$/test_iocard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="550" selection-end="550" vertical-scroll-proportion="0.3430878">
+        <state line="13" column="37" selection-start="570" selection-end="570" vertical-scroll-proportion="0.3240469">
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
