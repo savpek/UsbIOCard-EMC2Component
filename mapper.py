@@ -25,8 +25,8 @@ class OutputHandle(HandleBase):
             iocard.set_terminal_low(self.terminal_name)
 
 class AdcHandle(HandleBase):
-    def io_operation(self):
-        pass
+    def io_operation(self, iocard, component):
+        component[self.signal_name] = self.output_modifier(iocard.adc_of_terminal(self.terminal_name))
 
 class Component:
     handles = []
@@ -52,24 +52,10 @@ class Component:
         self.component.newpin(signal_name, hal.HAL_FLOAT, hal.HAL_OUT)
         self.handles.append(OutputHandle(signal_name, terminal_name, output_modifier))
 
-    def add_adc(self):
-        pass
+    def add_adc(self, signal_name, terminal_name, output_modifier=None):
+        self.component.newpin(signal_name, hal.HAL_FLOAT, hal.HAL_IN)
+        self.handles.append(AdcHandle(signal_name, terminal_name, output_modifier))
 
     def set_ready(self):
-        pass
-
-"""
-#!/usr/bin/python
-import hal, time
-h = hal.component("passthrough")
-h.newpin("in", hal.HAL_FLOAT, hal.HAL_IN)
-h.newpin("out", hal.HAL_FLOAT, hal.HAL_OUT)
-h.ready()
-try:
-    while 1:
-        time.sleep(1)
-        h['out'] = h['in']
-except KeyboardInterrupt:
-    raise SystemExit
-"""
+        self.component.ready()
 

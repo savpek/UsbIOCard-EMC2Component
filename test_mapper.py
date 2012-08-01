@@ -44,6 +44,23 @@ class Component2_UnitTests(unittest.TestCase):
         under_test.io_operation(self.iocard, self.component)
         self.iocard.set_terminal_high.assert_called_once_with("2.T0") # Notice inverted call.
 
+    def test_adchandle_reads_and_sets_value_correctly(self):
+        self.component = {'2T1':"NOT SET"}
+        self.iocard.adc_of_terminal = MagicMock(return_value=200)
+
+        under_test = mapper.AdcHandle("2T1", "2.T1", None)
+        under_test.io_operation(self.iocard, self.component)
+        self.iocard.adc_of_terminal.assert_called_once_with("2.T1")
+        self.assertEquals(200, self.component['2T1'])
+
+    def test_adchandle_work_with_custom_modifier(self):
+        self.component = {'2T1':"NOT SET"}
+        self.iocard.adc_of_terminal = MagicMock(return_value=200)
+
+        under_test = mapper.AdcHandle("2T1", "2.T1", lambda x:3*x)
+        under_test.io_operation(self.iocard, self.component)
+        self.assertEquals(600, self.component['2T1'])
+
 class Component_UnitTests(unittest.TestCase):
     def setUp(self):
         self.emc_component = MagicMock()
@@ -53,49 +70,37 @@ class Component_UnitTests(unittest.TestCase):
             "test_component",
             injected_component=self.emc_component)
 
-    def test_add_input_doesnt_require_modifier_funtion(self):
-        self.mapper.add_input("Anything", "Anything")
-
-    def test_add_input_appends_input_handle_to_list(self):
+    def test_add_input_adds_handle_and_creates_pin(self):
         self.mapper.add_input("2T0", "2.T0")
+        self.emc_component.newpin.assert_called_once_with("2T0", hal.HAL_FLOAT, hal.HAL_IN)
         self.assertEquals(self.mapper.handles[0].__class__.__name__, "InputHandle")
+        self.assertEquals(self.mapper.handles[0].terminal_name, "2.T0")
+        self.assertEquals(self.mapper.handles[0].signal_name, "2T0")
 
-    def test_add_input_set_fields_correctly(self):
-        testf = lambda x:2*x
-        self.mapper.add_input("2T2", "2.T2", testf)
-        self.assertEqual(self.mapper.handles[0].terminal_name, "2.T2")
-        self.assertEqual(self.mapper.handles[0].signal_name, "2T2")
-        self.assertEquals(self.mapper.handles[0].output_modifier, testf)
-
-    def test_add_input_creates_new_pin_to_component(self):
-        self.mapper.add_input("2T3", "2.T3")
-        self.emc_component.newpin.assert_called_once_with("2T3", hal.HAL_FLOAT, hal.HAL_IN)
-
-    def test_add_output_doesnt_require_modifier_function(self):
-        self.mapper.add_input("Anything", "Anything")
-
-    def test_add_output_appends_input_handle_to_list(self):
+    def test_add_output_adds_handle_and_creates_pin(self):
         self.mapper.add_output("2T0", "2.T0")
+        self.emc_component.newpin.assert_called_once_with("2T0", hal.HAL_FLOAT, hal.HAL_OUT)
         self.assertEquals(self.mapper.handles[0].__class__.__name__, "OutputHandle")
+        self.assertEquals(self.mapper.handles[0].terminal_name, "2.T0")
+        self.assertEquals(self.mapper.handles[0].signal_name, "2T0")
 
-    def test_add_output_set_fields_correctly(self):
-        testf = lambda x:2*x
-        self.mapper.add_output("2T2", "2.T2", testf)
-        self.assertEqual(self.mapper.handles[0].terminal_name, "2.T2")
-        self.assertEqual(self.mapper.handles[0].signal_name, "2T2")
-        self.assertEquals(self.mapper.handles[0].output_modifier, testf)
-
-    def test_add_output_creates_new_pin_to_component(self):
-        self.mapper.add_output("2T3", "2.T3")
-        self.emc_component.newpin.assert_called_once_with("2T3", hal.HAL_FLOAT, hal.HAL_OUT)
+    def test_add_adc_adds_handle_and_creates_pin(self):
+        self.mapper.add_adc("2T0", "2.T0")
+        self.emc_component.newpin.assert_called_once_with("2T0", hal.HAL_FLOAT, hal.HAL_IN)
+        self.assertEquals(self.mapper.handles[0].__class__.__name__, "AdcHandle")
+        self.assertEquals(self.mapper.handles[0].terminal_name, "2.T0")
+        self.assertEquals(self.mapper.handles[0].signal_name, "2T0")
 
     def test_update_runs_io_operation_for_all_items_in_list(self):
         item1 = MagicMock(mapper.InputHandle)
         item2 = MagicMock(mapper.OutputHandle)
+        item3 = MagicMock(mapper.OutputHandle)
         self.mapper.handles.append(item1)
         self.mapper.handles.append(item2)
+        self.mapper.handles.append(item3)
         self.mapper.update()
         self.assert_(item1.io_operation.called)
         self.assert_(item2.io_operation.called)
+        self.assert_(item3.io_operation.called)
 
 
