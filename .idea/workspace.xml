@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/userspace_component.py" line="22" mnemonic="3" />
+    <bookmark url="file://$PROJECT_DIR$/userspace_component.py" line="35" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e71d934b-83b3-4083-b98f-cb0c8787fe34" name="Default" comment="" />
@@ -45,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_iocard.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="test_iocard.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_iocard.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="37" selection-start="570" selection-end="570" vertical-scroll-proportion="0.3240469">
+            <state line="76" column="0" selection-start="3663" selection-end="3663" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -87,10 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userspace_component.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="userspace_component.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/userspace_component.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="10" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
+            <state line="32" column="23" selection-start="969" selection-end="969" vertical-scroll-proportion="0.5489405">
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -119,11 +119,11 @@
         <option value="$PROJECT_DIR$/inputs.py" />
         <option value="$PROJECT_DIR$/iocard.py" />
         <option value="$PROJECT_DIR$/joystic.py" />
-        <option value="$PROJECT_DIR$/userspace_component.py" />
         <option value="$PROJECT_DIR$/hal.py" />
         <option value="$PROJECT_DIR$/test_mapper.py" />
         <option value="$PROJECT_DIR$/mapper.py" />
         <option value="$PROJECT_DIR$/test_iocard.py" />
+        <option value="$PROJECT_DIR$/userspace_component.py" />
       </list>
     </option>
   </component>
@@ -463,11 +463,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16399573" sideWeight="0.47933072" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16399573" sideWeight="0.6909449" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16399573" sideWeight="0.20964567" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16399573" sideWeight="0.30216536" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30413386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30413386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -556,15 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/userspace_component.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="10" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/iocard.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="0" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.0">
@@ -590,9 +581,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_iocard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="37" selection-start="570" selection-end="570" vertical-scroll-proportion="0.3240469">
+        <state line="76" column="0" selection-start="3663" selection-end="3663" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/userspace_component.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="23" selection-start="969" selection-end="969" vertical-scroll-proportion="0.5489405">
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

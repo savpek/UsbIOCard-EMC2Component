@@ -39,7 +39,6 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self._except_value(self.usb_card.read_terminal, "HIGH", "READ 2.T0\nHIGH")
         self._except_value(self.usb_card.read_terminal, "HIGH", "READ 2.T0\rHIGH")
 
-
     def test_set_terminal_high_send_correctly_formatted_message(self):
         self._expect_output_to_io(self.usb_card.set_terminal_high, "SET 2.T0 HIGH\n", "2.T0")
 
