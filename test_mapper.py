@@ -1,10 +1,9 @@
 import unittest
-import iocard
-from mock import MagicMock, call, patch
+from mock import MagicMock
 import mapper
 import hal
 
-class Component2_UnitTests(unittest.TestCase):
+class Handles_UnitTests(unittest.TestCase):
     def setUp(self):
         self.component = {'2T1':"NOT SET"} # Simulates hal component signals as dictionary behavior.
         self.iocard = MagicMock()
@@ -61,43 +60,43 @@ class Component2_UnitTests(unittest.TestCase):
         under_test.io_operation(self.iocard, self.component)
         self.assertEquals(600, self.component['2T1'])
 
-class Component_UnitTests(unittest.TestCase):
+class Handler_UnitTests(unittest.TestCase):
     def setUp(self):
-        self.emc_component = MagicMock()
+        self.component = MagicMock()
         self.iocard = MagicMock()
-        self.mapper = mapper.Component(
+        self.mapper = mapper.Handler(
             self.iocard,
             "test_component",
-            injected_component=self.emc_component)
+            injected_component=self.component)
 
     def test_add_input_adds_handle_and_creates_pin(self):
         self.mapper.add_input("2T0", "2.T0")
-        self.emc_component.newpin.assert_called_once_with("2T0", hal.HAL_FLOAT, hal.HAL_IN)
-        self.assertEquals(self.mapper.handles[0].__class__.__name__, "InputHandle")
-        self.assertEquals(self.mapper.handles[0].terminal_name, "2.T0")
-        self.assertEquals(self.mapper.handles[0].signal_name, "2T0")
+        self.component.newpin.assert_called_once_with("2T0", hal.HAL_FLOAT, hal.HAL_IN)
+        self.assertEquals(self.mapper._handles[0].__class__.__name__, "InputHandle")
+        self.assertEquals(self.mapper._handles[0].terminal_name, "2.T0")
+        self.assertEquals(self.mapper._handles[0].signal_name, "2T0")
 
     def test_add_output_adds_handle_and_creates_pin(self):
         self.mapper.add_output("2T0", "2.T0")
-        self.emc_component.newpin.assert_called_once_with("2T0", hal.HAL_FLOAT, hal.HAL_OUT)
-        self.assertEquals(self.mapper.handles[0].__class__.__name__, "OutputHandle")
-        self.assertEquals(self.mapper.handles[0].terminal_name, "2.T0")
-        self.assertEquals(self.mapper.handles[0].signal_name, "2T0")
+        self.component.newpin.assert_called_once_with("2T0", hal.HAL_FLOAT, hal.HAL_OUT)
+        self.assertEquals(self.mapper._handles[0].__class__.__name__, "OutputHandle")
+        self.assertEquals(self.mapper._handles[0].terminal_name, "2.T0")
+        self.assertEquals(self.mapper._handles[0].signal_name, "2T0")
 
     def test_add_adc_adds_handle_and_creates_pin(self):
         self.mapper.add_adc("2T0", "2.T0")
-        self.emc_component.newpin.assert_called_once_with("2T0", hal.HAL_FLOAT, hal.HAL_IN)
-        self.assertEquals(self.mapper.handles[0].__class__.__name__, "AdcHandle")
-        self.assertEquals(self.mapper.handles[0].terminal_name, "2.T0")
-        self.assertEquals(self.mapper.handles[0].signal_name, "2T0")
+        self.component.newpin.assert_called_once_with("2T0", hal.HAL_FLOAT, hal.HAL_IN)
+        self.assertEquals(self.mapper._handles[0].__class__.__name__, "AdcHandle")
+        self.assertEquals(self.mapper._handles[0].terminal_name, "2.T0")
+        self.assertEquals(self.mapper._handles[0].signal_name, "2T0")
 
     def test_update_runs_io_operation_for_all_items_in_list(self):
         item1 = MagicMock(mapper.InputHandle)
         item2 = MagicMock(mapper.OutputHandle)
         item3 = MagicMock(mapper.OutputHandle)
-        self.mapper.handles.append(item1)
-        self.mapper.handles.append(item2)
-        self.mapper.handles.append(item3)
+        self.mapper._handles.append(item1)
+        self.mapper._handles.append(item2)
+        self.mapper._handles.append(item3)
         self.mapper.update()
         self.assert_(item1.io_operation.called)
         self.assert_(item2.io_operation.called)

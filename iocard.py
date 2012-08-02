@@ -1,14 +1,23 @@
 import logging
 import serial
 
-logging.basicConfig(filename='app.log', level=logging.INFO)
-
 class IoCardException(Exception):
     pass
 
+"""
+ Abstraction class to command USB-IO card.
+ Example:
+    iocard = UsbCard("COM9", 9600)
+    a = iocard.read_terminal("5.T1")
+    iocard.set_terminal_high("2.T2")
+    b = iocard.adc_of_termina("3.T0")
+ Throws:
+  Throws IO card error if connection works but result is somehow unexcepted.
+"""
 class UsbCard:
     ERROR_KEYWORD = "ERROR:"
-    TIMEOUT = 0.05
+    TIMEOUT = 0.05  # How long input is waited after command.
+                    # This delay is kept after every command call.
     READ_MAX_COUNT = 200
 
     def __init__(self, port, speed, serialInterface=None):
@@ -23,7 +32,7 @@ class UsbCard:
         self._check_for_error_keyword(result)
 
         if result != "HIGH" and result != "LOW":
-            raise ValueError("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: '" + result + "'")
+            raise IoCardException("Result should be 'LOW' or 'HIGH', other values are invalid. Returned value: '" + result + "'")
 
         return result
 

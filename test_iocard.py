@@ -18,7 +18,6 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
         self.handle_mock.inWaiting(return_value = 10)
         self._set_return_value("")
 
-
     def test_read_terminal_sends_correctly_formatted_message(self):
         self._expect_output_to_io(self.usb_card.read_terminal, "READ 2.T0\n", "2.T0", iocard_returns="HIGH")
 

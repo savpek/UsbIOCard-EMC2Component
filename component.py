@@ -1,10 +1,6 @@
 import logging
-import time
 import iocard
-import joystic
 import mapper
-
-ser = iocard.UsbCard(port="COM3", speed=9600)
 
 log = logging.getLogger('JogwheelApp')
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -12,7 +8,9 @@ logHandler = logging.FileHandler('userspace_component.log')
 logHandler.setFormatter(formatter)
 log.addHandler(logHandler)
 
-iomap = mapper.Component()
+usb_card = iocard.UsbCard("COM9", 9600)
+
+iomap = mapper.Handler(usb_card, "ComponentUsbIoCard")
 iomap.add_input("5T0", "5.T0")
 iomap.add_input("5T1", "5.T1")
 iomap.add_input("5T2", "5.T2")
@@ -36,7 +34,7 @@ def main():
     try:
         while True:
             iomap.update()
-    except Exception as e:
+    except iocard.IoCardException as e:
         log.exception(e)
 
 if __name__ == "__main__":
