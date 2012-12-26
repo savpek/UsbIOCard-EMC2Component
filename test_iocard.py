@@ -27,7 +27,7 @@ class UsbIoCardConnection_Tests(unittest.TestCase):
 
     def test_read_terminal_throws_exception_if_return_value_is_invalid(self):
         self._set_return_value("something random shit.")
-        with self.assertRaises(ValueError):
+        with self.assertRaises(IoCardException):
             self.usb_card.read_terminal("2.T0")
 
     def test_read_terminal_throws_exception_if_error_keyword_is_contained_in_return_value(self):
